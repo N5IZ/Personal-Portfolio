@@ -1,0 +1,548 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap");
+
+:root {
+  --silver: #f5f5f5;
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #666666;
+  --orange: #ff9800;
+  --orange1: #ef9000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway";
+  user-select: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+  cursor: poiner;
+}
+button,
+label {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+input[type="checkbox"] {
+  display: none;
+}
+/* ---Hiding Elements--- */
+.span {
+  opacity: 0;
+  margin-top: 5px;
+  transition: 1s ease-in-out;
+}
+.contain {
+  display: none;
+  opacity: 0;
+  transition: 0.2s ease-in;
+}
+/*----------------------------------------
+  Loader
+-----------------------------------------*/
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 1s ease-in;
+  position: fixed;
+  z-index: 1000;
+  background: #fff;
+}
+.loader div {
+  color: var(--orange);
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--orange);
+  border-radius: 0%;
+  animation-name: circle;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-delay: 0ms;
+}
+.loader h2 {
+  color: var(--orange);
+  position: relative;
+  left: -30px;
+}
+@keyframes circle {
+  0% {
+    transform: rotate(0deg);
+    border-radius: 10%;
+  }
+  75% {
+    transform: rotate(290deg);
+    border-radius: 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-radius: 10%;
+  }
+}
+/*----------------------------------------
+  Scroll To Top Button
+-----------------------------------------*/
+.scroll-btn.top {
+  padding: 13px 15px;
+  color: var(--white);
+  background: var(--orange);
+  border-radius: 30%;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  bottom: -50px;
+  right: 15px;
+  z-index: 3;
+  transition: 0.2s ease-in;
+}
+.scroll-btn.top:hover {
+  background: var(--orange1);
+}
+
+/*----------------------------------------
+  Header Section
+-----------------------------------------*/
+.header {
+  width: 100vw;
+  position: fixed;
+  z-index: 2;
+}
+.header.sticky {
+  background: var(--white);
+  color: #000000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.header.sticky .logo {
+  color: var(--black);
+}
+.header.sticky .nav a {
+  color: var(--black);
+}
+.header section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--silver);
+}
+.header .logo span {
+  color: var(--orange);
+}
+.header .nav a {
+  padding: 15px;
+  color: var(--silver);
+  font-weight: 800;
+  position: relative;
+}
+.header .nav a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  left: 50%;
+  background: var(--orange);
+  transition: 0.2s all;
+}
+.header .nav a:hover::before {
+  left: 0;
+  width: 100%;
+}
+/*----------------------------------------
+  Hero Section
+-----------------------------------------*/
+.hero {
+  width: 100%;
+  height: 100vh;
+  max-height: 1000px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/back.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transition: 1s ease-in;
+}
+.hero section {
+  width: 768px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--silver);
+}
+.hero .small-text {
+  font-size: 1.5rem;
+  padding: 20px;
+}
+.hero .big-text {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: 13px;
+  padding: 0px;
+}
+.hero .big-text .br {
+  display: none;
+}
+.hero .scroll-btn {
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  background: none;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
+.hero .scroll-btn img {
+  transition: 0.2s ease;
+}
+.hero .scroll-btn:hover > img {
+  width: 20px;
+}
+/*----------------------------------------
+  Main
+-----------------------------------------*/
+.main {
+  width: 100%;
+  height: auto;
+  background: var(--silver);
+  flex-direction: column;
+}
+.main section {
+  padding: 40px 0;
+}
+.main .heading {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 40px;
+  padding: 10px 10px;
+  position: relative;
+}
+.main .heading::before {
+  content: "";
+  position: absolute;
+  background: var(--orange);
+  width: 100px;
+  height: 4px;
+  bottom: 0px;
+}
+/*----------------------------------------
+  About Section
+-----------------------------------------*/
+.about {
+  display: flex;
+  justify-content: space-between;
+}
+.about .heading {
+  padding: 10px 0;
+}
+.about .counter {
+  transition-delay: 1s;
+  transition: 0.2s ease;
+}
+.about img {
+  width: 30%;
+  height: 30%;
+  margin: 20px;
+  margin-left: 10px;
+  border-radius: 10px;
+}
+.about .text {
+  padding: 20px;
+}
+.about p {
+  font-family: "Raleway";
+  font-weight: 500;
+  line-height: 30px;
+  color: #777;
+  font-size: 18px;
+  padding: 20px;
+}
+.about ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px;
+}
+.about ul li {
+  list-style: none;
+  text-align: center;
+}
+.about ul li h1 {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 40px;
+}
+.about ul li p {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 17px;
+  color: #777;
+}
+.about .btn {
+  background: var(--orange);
+  color: #fff;
+  text-decoration: none;
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 20px;
+  padding: 15px 40px;
+  margin: 20px;
+  border-radius: 30px;
+}
+.about .btn:hover {
+  background: var(--orange1);
+}
+/*----------------------------------------
+ Photo  Section
+-----------------------------------------*/
+.Photo .text {
+  padding: 0px;
+  margin: 0;
+}
+.Photo .list,
+.work .list {
+  width: 100%;
+  height: auto;
+  padding: 40px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3vw;
+}
+
+.Photo .list .box,
+.work .list .box {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.Photo .list .box img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(1);
+  transition: 0.5s all;
+}
+.Photo .list .box p {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  font-family: "Raleway";
+  font-weight: 800;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: 0.3s all;
+}
+
+.Photo .list .box:hover > img {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+.Photo .list .box:hover > p {
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* video section */
+
+.container {
+ 
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  gap: 50px;
+  background: var(--silver);
+  padding: 0px;
+  width: 600px;
+  height: 600px;
+}
+
+.container .video-links-container {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.container .video-links-container a video {
+  width: 100%;
+  height: 100%;
+}
+
+.container .video-container {
+  width: 500px;
+}
+
+.container .video-container .video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border: 2px solid #333;
+  border-radius: 5px;
+}
+
+.container .video-links-container .video-links {
+  font-size: 20px;
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 5px;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 5px;
+}
+
+.container .video-links-container .video-links:nth-child(odd) {
+  background: var(--silver);
+}
+
+.container .video-links-container .video-links:hover {
+  background: var(--silver);
+  color: var(--silver);
+}
+
+
+/*----------------------------------------
+  Contact Section
+-----------------------------------------*/
+.contact .photo {
+  width: calc(100% - 20px);
+  height: 600px;
+  margin: 10px;
+  background: url(../img/contact-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.contact .text {
+  margin-bottom: 20px;
+}
+.contact .heading {
+  color: var(--white);
+}
+.contact .heading::before {
+  left: calc(50% - 50px);
+  background: var(--white);
+}
+.contact .form {
+  width: 80%;
+  height: auto;
+  margin: auto 10%;
+  padding: 10px 50px;
+  padding-bottom: 100px;
+  background: var(--silver);
+  border-radius: 10px;
+  position: relative;
+  bottom: 200px;
+}
+.contact .form .row {
+  display: flex;
+}
+.contact .form span {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+}
+.contact .form span label {
+  padding: 10px 0px;
+  font-weight: 700;
+}
+.contact .form span input,
+.contact .form span textarea {
+  padding: 15px;
+  font-size: 1rem;
+  font-weight: 400;
+  border: 0px;
+  border-bottom: 1px solid var(--gray);
+  background: transparent;
+  resize: none;
+}
+.contact .form span input:hover,
+.contact .form span textarea:hover {
+  outline: 0px;
+  border: 0px;
+  border-bottom: 1px solid var(--gray);
+}
+.contact .form span input:focus,
+.contact .form span textarea:focus {
+  outline: 0px;
+  border: 0px;
+  border-bottom: 1px solid var(--gray);
+}
+.contact .form .submit-outer {
+  justify-content: center;
+  align-items: center;
+}
+.contact .form .submit {
+  font-weight: 700;
+  color: var(--white);
+  background: var(--orange);
+  border: 0px;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+.contact .form .submit:hover {
+  border: 0;
+  background: var(--orange1);
+}
+/*----------------------------------------
+  Footer Section
+-----------------------------------------*/
+.footer {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  animation: none;
+  background: var(--silver);
+}
+.footer section {
+  height: auto;
+  background: var(--silver);
+  position: absolute;
+  bottom: 0px;
+}
+.footer .row {
+  color: var(--black);
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 20px;
+}
+.footer .row h4 {
+  font-weight: 400;
+  padding: 10px;
+}
+.footer .row .column {
+  padding: 10px 0px;
+}
+.footer .row nav {
+  display: flex;
+  justify-content: center;
+}
+.footer .row nav a {
+  padding: 5px;
+}
+.footer .row nav svg {
+  width: 20px;
+}

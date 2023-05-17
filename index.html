@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="theme-color" content="#FF9800">
+
+   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/responsive.css">
+   <link rel="shortcut icon" href="img/icons/favicon.png" type="image/png">
+
+   <title>Nahom </title>
+</head>
+<body>
+   
+    <!-- Loader -->
+   <div class="loader">
+      <div></div>
+      <h2>n</h2>
+   </div>
+   <!-- Scroll To Top Button -->
+   <button class="scroll-btn top" onclick="window.scroll(0,0)">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path fill="currentColor" d="M390.624 150.625L256 16L121.376 150.625l22.628 22.627l95.997-95.998v417.982h32V77.257l95.995 95.995l22.628-22.627z"/></svg>
+   </button>
+
+    <!-- Header Section -->
+   <header class="header contain">
+      <section>
+         <a href="#" class="logo">nahom<span>.</span></a>
+         <input type="checkbox" id="sb-open">
+         <label for="sb-open" id="sb-o-btn">
+           <div class="span a"></div>
+            <div class="span b"></div>
+            <div class="span c"></div>
+         </label>
+         <nav class="nav" id="nav">
+            <a href="#hero" class="home-label">Home</a>
+            <a href="#about" class="about-label">About</a>
+            <a href="#Photo">Photo</a>
+            <a href="#My favorite videos">My favorite videos</a>
+            <a href="#contact">Contact me</a>
+         </nav>
+      </section>
+   </header>
+
+   <!-- Hero Section -->
+   <div class="hero contain" id="hero">
+      <section>
+         <h2 class="small-text">I'm Nahom</h2>
+         <b class="big-text">WEB-<div class="br"></div>DEVELOPER</b>
+      </section>
+      <button class="scroll-btn" onclick="window.scroll(0, innerHeight-65);">
+         <img src="img/icons/arrow-down.svg" width="25px" height="25px">
+      </button>
+   </div>
+   
+   <!-- Main Section -->
+   <main class="main contain">
+         <!-- About Section -->
+         <section class="about"  id="about">
+            <img class="img span" src="img/about.jpg" width="400px" height="500px" alt="JHON PHOTO">
+            <div class="text">
+              <h1 class="heading span">About Me</h1>
+              <p class="span">Hi , I'm Nahom Sisay i was born in Wollo. and I'm front-end Web Developer When I was younger, I want to be a singer. However, when I turned 13 years old, I realized I wasn't naturally talented in that way. Since then, I have been influenced by many successful peoples, particularly in the technology sector. Now I'm student at Addis Ababa University School of information science </p>
+               <ul id="counter-outer">
+                  <li class="span">
+                     <h1 class="counter" data-target="5+">5+</h1>
+                     <p>CERTIFICATES</p>
+                  </li>
+                  <li class="span">
+                     <h1 class="counter" data-target="4+">4+</h1>
+                     <p>PROJECTS DONE</p>
+                  </li>
+                  <li class="span">
+                     <h1 class="counter" data-target="500+">500+</h1>
+                     <p>LINKEDIN FOLLOWERS</p>
+                  </li>
+               </ul>
+               <a href="#contact" class="btn span">Contact Me</a>
+            </div>
+         </section>
+
+         <!-- Photo Section -->
+         <section class="Photo" id="Photo">
+            <div class="text span"><h1 class="heading">My photos</h1></div>
+            <div class="list">
+                <div class="box span"><img src="img/photo/1.jpg"><p>Big Dream</p></div>
+                <div class="box span"><img src="img/photo/2.jpg"><p>Friends</p></div>
+                <div class="box span"><img src="img/photo/3.jpg"><p>Certified</p></div>
+                <div class="box span"><img src="img/photo/4.jpg"><p>Strong</p></div>
+                <div class="box span"><img src="img/photo/5.jpg"><p>Peace</div>
+                <div class="box span"><img src="img/photo/6.jpg"><p>Realness</p></div>
+            </div>
+         </section>
+         <div id="My favorite videos" class="text span"><h1 class="heading">My favorite videos</h1></div>
+         <!-- video Section -->
+         <div class="container" style="background-color: --silver;" >
+            <div class="video-links-container">
+                <a href="img/video/1.mp4" class="video-links">
+                    <video src="img/video/1.mp4" width="100px" height="100px"></video></a>
+    
+                <a href="img/video/2.mp4" class="video-links"><video src="img/video/2.mp4"  width="100%" height="100%"></video></a>
+                <a href="img/video/3.mp4" class="video-links"><video src="img/video/3.mp4"  width="100px" height="100px"></video></a>
+                <a href="img/video/4.mp4" class="video-links"><video src="img/video/4.mp4"  width="100px" height="100px"></video></a>
+                <a href="img/video/5.mp4" class="video-links"><video src="img/video/5.mp4"  width="100px" height="100px"></video></a>
+            </div>
+    
+            <div class="video-container">
+                <video src="img/works/1.mp4" controls class="video"></video>
+            </div>
+    
+        </div>
+        <script>
+            document.querySelectorAll('.video-links').forEach(links => {
+                links.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    var src = links.getAttribute('href');
+                    document.querySelector('.video').src = src;
+                    document.querySelector('.video').play();
+                });
+            });
+        </script>
+        <br>
+        <br>
+        <div class="text span"><h1 class="heading">Contact me</h1></div>
+
+         <!-- Contact Section -->
+         <section class="contact" id="contact">
+            <div class="photo span"></div>
+    
+                <form action="" class="form span">
+                    <div class="row">
+                        <span>
+                            <label for="name">Name</label>
+                            <input type="text" class="name" id="name" placeholder="Your Name here">
+                        </span>
+                        <span>
+                            <label for="email">Email</label>
+                            <input type="email" class="name" id="name" placeholder="Your Email here">
+                        </span>
+                    </div>
+                    <span>
+                        <label for="message">Message</label>
+                        <textarea name="" id="message" cols="30" rows="5" placeholder="Your Message here"></textarea>
+                    </span>
+                    
+                    <span class="submit-outer">
+                        <input type="submit" class="submit" style="cursor: pointer;" value="Send Message">
+                    </span>
+                </form>
+         </section>
+   </main>
+
+   <!-- Footer Section -->
+   <footer class="footer section">
+      <section>
+         <div class="row">
+            <div class="column">
+                <h3>Address</h3>
+                <h4>Addis Ababa, Ethiopia</h4>
+            </div>
+            <div class="column">
+                <h3>Phone</h3>
+                <h4>+251 983150456</h4>
+            </div>
+            <div class="column">
+                <h3>Email</h3>
+                <h4>www.nahom.nasiz@gmail.com</h4>
+            </div>
+        </div>
+
+        <div class="row center">
+               <nav>
+                  <a href="https://github.com/N5IZ"><img width="24px" height="24px" src="img/icons/icons8-github.svg"></a>
+                  <a href="https://www.facebook.com/prince.nasiz.5/"><img width="24px" height="24px" src="img/icons/icons8-facebook.svg"></a>
+                  <a href="https://www.linkedin.com/in/nahom-sisay-32543a23a/"><img width="24px" height="24px" src="img/icons/linkedin.svg"></a>
+               </nav>
+         </div>
+
+         <div class="row center">
+               <p class="copyrights">Developed by Nahom Sisay</p>
+         </div>
+
+      </section>
+  </footer>
+
+   <!-- JavaScript -->
+   <script src="js/index.js"></script>
+</body>
+</html>
